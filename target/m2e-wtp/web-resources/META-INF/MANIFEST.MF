@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Built-By: xiazicheng
+Class-Path: jmf-2.1.1e.jar quartz-2.2.1.jar c3p0-0.9.1.1.jar quartz-jo
+ bs-2.2.1.jar jstl-1.2.jar spring-context-3.1.2.RELEASE.jar spring-aop
+ -3.1.2.RELEASE.jar spring-asm-3.1.2.RELEASE.jar spring-core-3.1.2.REL
+ EASE.jar commons-logging-1.1.1.jar spring-beans-3.1.2.RELEASE.jar spr
+ ing-context-support-3.1.2.RELEASE.jar spring-expression-3.1.2.RELEASE
+ .jar spring-web-3.1.2.RELEASE.jar aopalliance-1.0.jar spring-webmvc-3
+ .1.2.RELEASE.jar slf4j-api-1.7.6.jar logback-classic-1.1.2.jar logbac
+ k-core-1.1.2.jar jcl-over-slf4j-1.7.6.jar janino-2.7.8.jar commons-co
+ mpiler-2.7.8.jar jackson-databind-2.3.5.jar jackson-core-2.3.5.jar ja
+ ckson-annotations-2.3.5.jar javax.mail-api-1.5.2.jar activation-1.1.j
+ ar javax.mail-1.5.4.jar
+Build-Jdk: 1.8.0_77
+Created-By: Maven Integration for Eclipse
+

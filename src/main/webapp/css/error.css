@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+body {
+	font-family: "Helvetica Neue", Helvetica Neue, Helvetica,
+		"Microsoft Yahei", Arial, "Hiragino Sans GB", sans-serif;
+}
+
+.error_box {
+	width: 875px;
+	height: 260px;
+	margin: 100px auto 100px;
+	position: relative;
+}
+
+.err_404 .error_box {
+	background: url("../images/http-404.jpg") no-repeat scroll center center
+		rgba(0, 0, 0, 0);
+}
+
+.err_404 #err_txt {
+	color: #868686;
+	font-size: 26px;
+	left: 465px;
+	line-height: 28px;
+	position: absolute;
+	top: 35px;
+	text-align: left;
+}
+
+.err_404 .en {
+	color: #979797;
+	font-size: 0.9em;
+}
+
+.err_500 .error_box {
+	background: url("../images/http-500.jpg") no-repeat scroll center center
+		rgba(0, 0, 0, 0);
+}
+
+.err_500 #err_txt {
+	color: #868686;
+	font-size: 22px;
+	left: 465px;
+	line-height: 28px;
+	position: absolute;
+	top: 35px;
+	text-align: left;
+}
+
+.err_500 .en {
+	color: #979797;
+	font-size: 1.1em;
+}
+
+#err_txt p {
+	margin: 0;
+}
+
+.hide {
+	display: none;
+}

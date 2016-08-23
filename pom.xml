@@ -1,0 +1,236 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.csair.mts</groupId>
+    <artifactId>mts-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>mts-web</artifactId>
+  <packaging>war</packaging>
+  <name>web</name>
+  <!-- csair-2 -->
+    <properties>
+        <!-- 默认没使用根目录，如果个人调整需要可以任意修改 -->
+        <jetty.context.path>/mts</jetty.context.path>
+        
+        <jetty.version>9.2.10.v20150310</jetty.version>
+        <war-plugin.version>2.6</war-plugin.version>
+        <servlet.version>3.0</servlet.version>
+        <jsp.version>2.2</jsp.version>
+        <jstl.version>1.2</jstl.version>
+        <quartz.version>2.2.1</quartz.version>
+        <jackson.version>2.3.5</jackson.version>
+    </properties>
+    
+    <profiles>
+        <!-- 配置在未指定-Djetty.port属性的情况下默认使用的端口号 -->
+        <profile>
+            <id>default-jetty-port</id>
+            <activation>
+                <property>
+                    <name>!jetty.port</name>
+                </property>
+            </activation>
+            <properties>
+                <jetty.port>8080</jetty.port>
+            </properties>
+        </profile>    
+    </profiles>
+    
+    <dependencies>
+    	<!--  -->
+    	<dependency>
+		    <groupId>javax.media</groupId>
+		    <artifactId>jmf</artifactId>
+		    <version>2.1.1e</version>
+		</dependency>
+    	<!-- Quartz框架必要依赖 -->
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		    <version>${quartz.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz-jobs</artifactId>
+		    <version>${quartz.version}</version>
+		</dependency> 		
+    	
+        <!-- JavaEE规范Web应用必要依赖 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>${jsp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		
+        <!-- Logging framework -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+        </dependency>
+        
+        <!-- Jackson framework -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>               		
+		
+		<!-- csair commons framework -->
+		<dependency>
+		    <groupId>com.csair.diamond</groupId>
+		    <artifactId>diamond-commons-lang</artifactId>
+		</dependency>		  
+		
+		<dependency>
+			<groupId>javax.media</groupId>
+			<artifactId>jmf</artifactId>
+			<version>2.1.1e</version>
+		</dependency>    
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>javax.mail-api</artifactId>
+		    <version>1.5.2</version>
+		</dependency>
+	<!-- 
+	 -->	  
+		<dependency >  
+		    <groupId >com.sun.mail </groupId >  
+		    <artifactId >javax.mail </artifactId >  
+		    <version >1.5.4 </version >  
+		</dependency >
+    </dependencies>
+  
+    <build>
+        <plugins>
+		    <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-compiler-plugin</artifactId>
+		    </plugin>
+		      
+		    <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-resources-plugin</artifactId>
+		    </plugin>
+		           
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-war-plugin</artifactId>
+	            <version>${war-plugin.version}</version>
+	            <configuration>
+	                <!-- 为了让WAR打包插件设定包名称不带版本号 -->
+	                <warName>${project.artifactId}</warName>
+	                <archive>
+	                    <!-- 为了在生成的MANIFEST.MF文件中添加Class-Path -->
+	                    <manifest>
+	                        <addClasspath>true</addClasspath>
+	                    </manifest>
+	                </archive>
+	            </configuration>
+	        </plugin> 
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
+                <configuration>
+                    <httpConnector>
+                        <port>${jetty.port}</port>
+                    </httpConnector>
+                    <useTestClasspath>false</useTestClasspath>
+                    <webAppConfig>
+                        <contextPath>${jetty.context.path}</contextPath>
+                        <!-- 修改了默认属性，防止静态文件被jetty锁定 -->
+                        <defaultsDescriptor>src/main/webapp/WEB-INF/webdefault.xml</defaultsDescriptor>
+                    </webAppConfig>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+            <!-- 只为了将webapp目录也被添加进eclipse的源码视图中 -->
+            <testResource>
+                <directory>src/main/webapp</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>WEB-INF/web*.xml</include>
+                </includes>
+            </testResource>
+        </testResources>
+    </build>
+      
+</project>

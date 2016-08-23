@@ -1,0 +1,136 @@
+@charset "utf-8";
+/*防止用户更改页面背景颜色*/
+html {
+    word-wrap: break-word;
+    word-break: break-all;
+
+    color: black;
+    background: white;
+}
+/*内外边距的大小会导致浏览器兼容问题*/
+* {
+    padding: 0;
+    margin: 0;
+
+    font-family: 微软雅黑;
+}
+/*头部*/
+.header {
+    width: auto;
+    height: 50px;
+    min-width: 1170px;
+
+    background-color: #222;
+}
+.main_header {
+    width: 1140px;
+    padding-top: 13px;
+    margin: 0 auto;
+
+    font-size: 16px;
+
+    color: #fff;
+    background: rgba(0,0,0,0);
+}
+.main_header_left {
+    float: left;
+
+    background: rgba(0,0,0,0);
+}
+.main_header_right {
+    float: right;
+
+    background: rgba(0,0,0,0);
+}
+#username {
+    position: relative;
+
+    float: right;
+    padding-right: 15px;
+}
+#logout {
+    color: #fff;
+}
+.logout {
+    float: right;
+}
+.logo {
+    height: 124px;
+    margin-bottom: 15px;
+
+    background-color: #dedede;
+}
+.container_body {
+    padding: 15px 0;
+}
+.btn-my {
+    width: 95px;
+    height: 37px;
+    margin-right: 5px;
+
+    color: #00a8ff;
+    border: 1px solid turquoise;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.btn-my:hover {
+    color: #fff;
+    background-color: #5adcf1;
+}
+#fail:hover {
+    color: #fff;
+    background-color: #f52f2f;
+}
+#success:hover {
+    color: #fff;
+    background-color: #75fd5d;
+}
+#running:hover {
+    color: #fff;
+    background-color: #337ab7;
+}
+#waiting:hover {
+	color: #fff;
+	background-color: #ffb84e;
+}
+#add_job,#remove_job {
+    top: 23%;
+}
+#EXECUTING {
+    margin: -27px;
+    margin-left: 34px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #337ab7;
+}
+#EXECUTED {
+    margin: -27px;
+    margin-left: 34px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #75fd5d;
+}
+#EXCEPTION {
+    margin: -27px;
+    margin-left: 34px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #f52f2f;
+}
+#SCHEDULE {
+    margin: -27px;
+    margin-left: 34px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #ffb84e;
+}
+
