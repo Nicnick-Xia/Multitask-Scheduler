@@ -3,7 +3,7 @@ A practise for quartz application
 ## Introduction
 This is a group project. In this project, we use Quartz as our core scheduler to manage multitask. The application is a web-app using Spring MVC as its service framework.
 
-##  example Jobs
+##  Example Jobs
 * play music (The music file should be placed at D:\\)
 * send E-mail (Using a local mail server to realize)
 * exe job (open any exe file)
